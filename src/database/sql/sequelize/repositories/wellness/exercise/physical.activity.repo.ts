@@ -107,7 +107,6 @@ export class PhysicalActivityRepo implements IPhysicalActivityRepo {
         }
     };
 
-    // eslint-disable-next-line max-len
     update = async (id: string, updateModel: PhysicalActivityDomainModel): Promise<PhysicalActivityDto> => {
         try {
             const physicalActivity = await PhysicalActivity.findOne({ where: { id: id } });
@@ -157,6 +156,6 @@ export class PhysicalActivityRepo implements IPhysicalActivityRepo {
             Logger.instance().log(error.message);
             throw new ApiError(500, error.message);
         }
-    }
+    };
 
 }

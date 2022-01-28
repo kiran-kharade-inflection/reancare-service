@@ -114,7 +114,6 @@ export class DoctorNoteRepo implements IDoctorNoteRepo {
         }
     };
 
-    // eslint-disable-next-line max-len
     update = async (id: string, doctorNoteDomainModel: DoctorNoteDomainModel): Promise<DoctorNoteDto> => {
         try {
             const doctorNote = await DoctorNote.findByPk(id);
@@ -159,6 +158,6 @@ export class DoctorNoteRepo implements IDoctorNoteRepo {
             Logger.instance().log(error.message);
             throw new ApiError(500, error.message);
         }
-    }
+    };
 
 }

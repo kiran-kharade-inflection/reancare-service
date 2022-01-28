@@ -58,9 +58,8 @@ export class DoctorRepo implements IDoctorRepo {
             Logger.instance().log(error.message);
             throw new ApiError(500, error.message);
         }
-    }
+    };
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     updateByUserId = async (userId: string, model: DoctorDomainModel): Promise<DoctorDetailsDto> => {
         try {
             const doctor = await Doctor.findOne({ where: { UserId: userId } });
@@ -111,7 +110,7 @@ export class DoctorRepo implements IDoctorRepo {
             Logger.instance().log(error.message);
             throw new ApiError(500, error.message);
         }
-    }
+    };
 
     search = async (filters: DoctorSearchFilters): Promise<DoctorSearchResults> => {
         try {
@@ -263,6 +262,6 @@ export class DoctorRepo implements IDoctorRepo {
             Logger.instance().log(error.message);
             throw new ApiError(500, error.message);
         }
-    }
+    };
     
 }

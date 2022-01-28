@@ -27,7 +27,7 @@ export class PersonRepo implements IPersonRepo {
             return existing != null;
         }
         return false;
-    }
+    };
 
     personExistsWithPhone = async (phone: string): Promise<boolean> => {
         if (phone != null && typeof phone !== 'undefined') {
@@ -198,7 +198,6 @@ export class PersonRepo implements IPersonRepo {
         }
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     search(filters: any): Promise<PersonDto[]> {
         throw new Error('Method not implemented.');
     }
@@ -222,7 +221,7 @@ export class PersonRepo implements IPersonRepo {
             Logger.instance().log(error.message);
             throw new ApiError(500, error.message);
         }
-    }
+    };
 
     addAddress = async (id: string, addressId: string): Promise<boolean> => {
         try {
@@ -244,7 +243,7 @@ export class PersonRepo implements IPersonRepo {
             Logger.instance().log(error.message);
             throw new ApiError(500, error.message);
         }
-    }
+    };
     
     removeAddress = async (id: string, addressId: string): Promise<boolean> => {
         try {
@@ -259,7 +258,7 @@ export class PersonRepo implements IPersonRepo {
             Logger.instance().log(error.message);
             throw new ApiError(500, error.message);
         }
-    }
+    };
 
     getAddresses = async (id: string): Promise<AddressDto[]> => {
         try {
@@ -280,6 +279,6 @@ export class PersonRepo implements IPersonRepo {
             Logger.instance().log(error.message);
             throw new ApiError(500, error.message);
         }
-    }
+    };
 
 }
